@@ -1,2 +1,7 @@
 node_modules/*
 typings/*
+*.map
+app/app.component.js
+app/app.module.js
+app/main.js
+*~
