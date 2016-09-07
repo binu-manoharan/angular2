@@ -24,9 +24,9 @@ export class AppComponent {
   title = "Tour of Heroes";
   heroes = [
     new Hero(1, "Maiev Shadowsong"),
-    new Hero(2, "Illidan Stormrage")
-    new Hero(3, "Arthus")
-    new Hero(4, "Priestess of the Moon")
+    new Hero(2, "Illidan Stormrage"),
+    new Hero(3, "Arthus"),
+    new Hero(4, "Priestess of the Moon"),
     new Hero(5, "Thrall")
   ]
 }
