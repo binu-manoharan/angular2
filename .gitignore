@@ -5,3 +5,4 @@ app/app.component.js
 app/app.module.js
 app/main.js
 *~
+npm-debug.log
