@@ -24,11 +24,13 @@ const HEROES: Hero[] = [
   selector: 'my-app',
   template: `
   <h1>{{title}}</h1>
-  <h2>{{heroes[0].name}} details!</h2>
-  <div><label>id: </label>{{heroes[0].id}}</div>
+  <div *ngIf="selectedHero">
+  <h2>{{selectedHero.name}} details!</h2>
+  <div><label>id: </label>{{selectedHero.id}}</div>
   <div>
     <label>name: </label>
-    <input value="{{heroes[0].name}}" placeholder="name">
+    <input value="{{selectedHero.name}}" placeholder="name">
+  </div>
   </div>
   <div>
     <p *ngIf="heroes.length > 3">There are many heroes!</p>
@@ -39,7 +41,7 @@ const HEROES: Hero[] = [
       </li>
     </ul>
   </div>
-  `
+  `,
   styles: [`
     .selected {
       background-color: #CFD8DC !important;
@@ -94,4 +96,9 @@ const HEROES: Hero[] = [
 export class AppComponent {
   title = "Tour of Heroes";
   heroes = HEROES;
+  selectedHero: Hero;
+
+  onSelect(hero: Hero): void {
+    this.selectedHero = hero;
+  }
 }
