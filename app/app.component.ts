@@ -36,12 +36,14 @@ const HEROES: Hero[] = [
     <p *ngIf="heroes.length > 3">There are many heroes!</p>
     <h2>My Heroes</h2>
     <ul class="heroes">
-      <li *ngFor="let hero of heroes" (click)="onSelect(hero)">
-        <span class="badge">{{hero.id}}</span> {{hero.name}}
+      <li *ngFor="let hero of heroes"
+        (click)="onSelect(hero)"
+        [class.selected]="hero === selectedHero">
+	<span class="badge">{{hero.id}}</span> {{hero.name}}
       </li>
     </ul>
   </div>
-  `,
+    `,
   styles: [`
     .selected {
       background-color: #CFD8DC !important;
