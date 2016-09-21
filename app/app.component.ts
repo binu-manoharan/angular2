@@ -1,11 +1,5 @@
 import { Component } from '@angular/core';
-
-export class Hero {
-  constructor (
-    public id: number,
-    public name: string
-  ) {}
-}
+import { Hero } from './hero';
 
 const HEROES: Hero[] = [
   { id: 11, name: "Luna" },
@@ -42,6 +36,7 @@ const HEROES: Hero[] = [
 	<span class="badge">{{hero.id}}</span> {{hero.name}}
       </li>
     </ul>
+    <my-hero-detail [hero]="selectedHero"></my-hero-detail>    
   </div>
     `,
   styles: [`
