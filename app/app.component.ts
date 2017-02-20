@@ -1,17 +1,28 @@
-import { Component } from '@angular/core'
+import { Component } from '@angular/core';
+
+export class Hero {
+    id: number;
+    name: string;
+}
 
 @Component({
     selector: 'my-app',
     template: `
         <h1>{{title}}</h1>
-        <nav>
-            <a routerLink="/dashboard">Dashboard</a>
-            <a routerLink="/heroes">Heroes</a>
-        </nav>
-        <router-outlet></router-outlet>
+        <h2>{{hero.name}} details!</h2>
+        <div><label>id: </label> {{hero.id}}</div>
+        <div>
+            <label>name: </label> {{hero.name}}
+            <br/>
+            <input [(ngModel)]="hero.name" placeholder="name">
+        </div>
     `
 })
 
 export class AppComponent {
-    title = 'Tour of Heroes';
+    title: string = 'Tour of heroes';
+    hero: Hero = {
+        id: 1,
+        name: 'Windstorm'
+    };
 }
